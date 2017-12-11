@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='css/upload.css')}}">
+<title>Face Recognition</title>
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+</head>
+<body>
+<!-- <form id="upload-form" action="{{ url_for('upload') }}" method="POST" enctype="multipart/form-data">
+    <strong>Upload only jpeg file format:</strong><br>
+    <input id="file-picker" type="file" name="file" accept="image/jpeg" multiple>
+    <div id="msg"></div>
+    <input type="submit" value="Upload!" id="upload-button">
+</form> -->
+    <header>
+        <h2>Face Recognition</h2>
+    </header>
+    <div class="container">
+        <div class="contr"><h2>You can select the image(< 1MB and .jpg) and click Upload button</h2></div>
+
+        <div class="upload_form_cont">
+            <form id="upload_form" enctype="multipart/form-data" method="POST" action="{{ url_for('upload') }}">
+                <div>
+                    <div><label for="file">Please select image file</label></div>
+                    <div><input type="file" name="file" id="file" onchange="fileSelected();" /></div>
+                </div>
+                <div>
+                    <input type="submit" id = "upload-button" value="Upload!" onclick="startUploading()" />
+                </div>
+
+                <div id="progress_info">
+                    <div id="progress"></div>
+                    <div id="progress_percent">&nbsp;</div>
+                    <div class="clear_both"></div>
+                    <div>
+                        <div id="speed">&nbsp;</div>
+                        <div id="remaining">&nbsp;</div>
+                        <div id="b_transfered">&nbsp;</div>
+                        <div class="clear_both"></div>
+                    </div>
+                    <div id="upload_response"></div>
+                </div>
+            </form>
+            <img id="preview" />
+        </div>
+    </div>
+</body>
+<script src="{{url_for('static', filename='js/upload.js')}}"></script>
+</html>

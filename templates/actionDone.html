@@ -1,0 +1,32 @@
+<html>
+<head>
+<meta http-equiv='cache-control' content='no-cache'>
+<meta http-equiv='expires' content='0'>
+<meta http-equiv='pragma' content='no-cache'>
+
+<script type="text/javascript">
+
+var x;
+if(navigator.appName.search('Microsoft')>-1) { x = new ActiveXObject('MSXML2.XMLHTTP'); }
+else { x = new XMLHttpRequest(); }
+
+function getdata() {
+x.open('get', "{{url_for('static', filename='./results.txt')}}");
+x.onreadystatechange= showdata;
+x.send(null);
+}
+
+function showdata() {
+if(x.readyState==4) {
+  var el = document.getElementById('content');
+  el.innerHTML = x.responseText;
+}
+}
+
+</script>
+</head>
+
+<body onload="getdata();showdata();">
+    <div id="content"></div>
+</body>
+</html>

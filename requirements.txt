@@ -1,0 +1,11 @@
+scipy==0.13.3
+numpy==1.8.2
+dlib==19.4.0
+Flask==0.12.2
+gunicorn==19.7.1
+requests==2.2.1
+Jinja2==2.7.2
+Werkzeug==0.13
+itsdangerous==0.24
+MarkupSafe==0.18
+click==6.7
