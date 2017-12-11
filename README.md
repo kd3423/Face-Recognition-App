@@ -38,6 +38,8 @@ python app.py
 
 On the web app, simply upload the image to test the model. The output to the image will be simply a json format text, showing if the face(s) is present in the image or not.
 
+You can see the web app in action @ http://kd3423.pythonanywhere.com/  
+
 ### Accuracy
 
 After just using 2 images out of the batch of 210 images in training. So the images used for testing is 208.
